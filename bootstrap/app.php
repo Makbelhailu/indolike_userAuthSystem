@@ -13,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        // $middleware->append(JwtMiddleware::class);
+        $middleware->alias(["jwt" => JwtMiddleware::class]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
